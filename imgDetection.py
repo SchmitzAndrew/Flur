@@ -8,9 +8,10 @@ class Img:
     def detect_face(self):
         img = cv2.imread(self.img_path)
         gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+
         faces = self.faceCascade.detectMultiScale(
             gray,  # selects grayscale image
-            scaleFactor=1.05,  # determines distance to and from camera
+            scaleFactor=1.03,  # determines distance to and from camera
             minNeighbors=10,  # objects detected near the current one
             minSize=(25, 25),  # size of the window
             maxSize=(1000, 1000)  # max window size
