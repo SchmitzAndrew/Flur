@@ -20,24 +20,24 @@ class Vid:
                 gray,  # selects grayscale image
                 scaleFactor=1.03,  # determines distance to and from camera
                 minNeighbors=10,  # objects detected near the current one
-                minSize=(25, 25),  # size of the window
-                maxSize=(1000, 1000)  # max window size
+                minSize=(50, 50),  # size of the window
+                maxSize=(500, 500)  # max window size
                 # DEFAULT: 1.1, 5, 25, 1000
             )
             # Detect the eyes
             eyes = self.eyeCascade.detectMultiScale(
                 gray,  # selects grayscale image
-                scaleFactor=1.03,  # determines distance to and from camera
-                minNeighbors=10,  # objects detected near the current one
-                minSize=(25, 25),  # size of the window
-                maxSize=(1000, 1000)  # max window size
+                scaleFactor=1.01,  # determines distance to and from camera
+                minNeighbors=1,  # objects detected near the current one
+                minSize=(10, 10),  # size of the window
+                maxSize=(50, 50)  # max window size
                 # DEFAULT: 1.1, 5, 25, 1000
             )
             # Draw the rectangle around each face
 
-            self.draw_rectangle(faces, frame)
+            self.draw_rectangle(faces, frame, 255, 0, 0)
 
-            self.draw_rectangle(faces, frame)
+            self.draw_rectangle(eyes, frame, 0, 255, 0)
             # Display
             cv2.imshow('img', frame)
             # Stop if escape key is pressed
@@ -47,6 +47,6 @@ class Vid:
         # Release the VideoCapture object
         cap.release()
 
-    def draw_rectangle(self, part, img):
+    def draw_rectangle(self, part, frame, r, g, b):
         for (x, y, w, h) in part:
-            cv2.rectangle(img, (x, y), (x + w, y + h), (255, 0, 0), 2)
+            cv2.rectangle(frame, (x, y), (x + w, y + h), (r, g, b), 2)
