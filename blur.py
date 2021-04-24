@@ -9,5 +9,5 @@ def blur(img, part, intensity):
         region = im.crop(box)
         blurred = region.filter(ImageFilter.GaussianBlur(intensity))
         im.paste(blurred, box)
-    blurred_image = im.save("blurredimage.jpg")
+    blurred_image = im.save("out/blurredimage.jpg")
 

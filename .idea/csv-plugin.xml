@@ -10,7 +10,21 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\cat.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\img.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
+        <entry key="\imgDetection.py">
           <value>
             <Attribute>
               <option name="separator" value="," />

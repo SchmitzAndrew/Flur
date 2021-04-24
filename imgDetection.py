@@ -1,5 +1,6 @@
 import cv2
 
+
 class Img:
     def __init__(self, img_path, faceCascade):
         self.img_path = img_path
