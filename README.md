@@ -11,4 +11,6 @@ Finds the faces with OpenCV:
 And blurs them with Pillow:
 ![dp_blurred](https://cdn.discordapp.com/attachments/689895768269783088/835378557437739058/unknown.png)
 
-This technique is also applied to cats, adding a clown outift in real time.
+This technique is also applied to other objects, like cats:
+
+![cat_blurred](https://cdn.discordapp.com/attachments/689895768269783088/835409526722265108/unknown.png)
