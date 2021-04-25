@@ -17,6 +17,13 @@
             </Attribute>
           </value>
         </entry>
+        <entry key="\clown.py">
+          <value>
+            <Attribute>
+              <option name="separator" value="," />
+            </Attribute>
+          </value>
+        </entry>
         <entry key="\img.py">
           <value>
             <Attribute>
