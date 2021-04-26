@@ -42,8 +42,10 @@ def video_detection():
 
 # clown transformation
 def clown_transformation():
-    input_image = "shocker.jpg"
-    clownImg = Clown(input_image, )
+    input_image = "images/carrey.jfif"
+    clownImg = Clown(input_image, faceCascade, eyeCascade, smileCascade)
+    img = clownImg.detect_features()
+    clownImg.show_img(img)
 
 
 # Prompts and choice:
