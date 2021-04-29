@@ -64,9 +64,13 @@ class Clown(Img):
         eye = Image.open("images/clown_eye.png")
         smile = Image.open("images/clown_smile.png")
         for x, y, w, h in faces:
-            original_img.paste(nose, ((x + w) / 2), ((y + h) / 2))
+            coordinates = (x, y, x + w, y - h)
+            original_img.paste(nose, coordinates)
+            original_img.save('out/clown_img.jpg')
         for x, y, w, h in eyes:
-            original_img.paste(eyes, ((x + w) / 2), ((y + h) / 2))
+            coordinates = (x, y, x + w, y - h)
+            original_img.paste(eyes, coordinates)
+            original_img.save('out/clown_img.jpg')
 
         return original_img
 
