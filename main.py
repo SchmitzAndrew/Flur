@@ -42,7 +42,7 @@ def video_detection():
 
 # clown transformation
 def clown_transformation():
-    input_image = "images/carrey.jfif"
+    input_image = "images/carrey2.jpg"
     clownImg = Clown(input_image, faceCascade, eyeCascade, smileCascade)
     img = clownImg.detect_features()
     clownImg.show_img(img)

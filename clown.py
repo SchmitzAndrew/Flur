@@ -19,8 +19,8 @@ class Clown(Img):
 
         faces = self.faceCascade.detectMultiScale(
             gray,  # selects grayscale image
-            scaleFactor=1.02,  # determines distance to and from camera
-            minNeighbors=1,  # objects detected near the current one
+            scaleFactor=1.35,  # determines distance to and from camera
+            minNeighbors=0,  # objects detected near the current one
             minSize=(50, 50),  # size of the window
             maxSize=(200, 200)  # max window size
             # DEFAULT: 1.1, 5, 25, 1000
@@ -28,7 +28,7 @@ class Clown(Img):
 
         eyes = self.eyeCascade.detectMultiScale(
             gray,  # selects grayscale image
-            scaleFactor=1.146,  # determines distance to and from camera
+            scaleFactor=1.1,  # determines distance to and from camera
             minNeighbors=0,  # objects detected near the current one
             minSize=(45, 45),  # size of the window
             maxSize=(50, 50)  # max window size
@@ -37,10 +37,10 @@ class Clown(Img):
 
         smile = self.smileCascade.detectMultiScale(
             gray,
-            scaleFactor=1.05,  # determines distance to and from camera
+            scaleFactor=1.1,  # determines distance to and from camera
             minNeighbors=0,  # objects detected near the current one
-            minSize=(25, 25),  # size of the window
-            maxSize=(50, 50)  # max window size
+            minSize=(150, 150),  # size of the window
+            maxSize=(250, 250)  # max window size
             # DEFAULT: 1.1, 5, 25, 1000
         )
         self.draw_rectangle(faces, img,  255, 0, 0)
@@ -66,11 +66,10 @@ class Clown(Img):
         for x, y, w, h in faces:
             coordinates = (x, y, x + w, y - h)
             original_img.paste(nose, coordinates)
-            original_img.save('out/clown_img.jpg')
         for x, y, w, h in eyes:
             coordinates = (x, y, x + w, y - h)
             original_img.paste(eyes, coordinates)
-            original_img.save('out/clown_img.jpg')
+        original_img.save('out/clown_img.jpg')
 
         return original_img
 
