@@ -59,10 +59,13 @@ class Clown(Img):
         self.show_img(img)
 
     def place_parts(self, faces, eyes, smile):
-        original_img = Image.open(self.img_path)
-        nose = Image.open("images/clown_nose.png")
-        eye = Image.open("images/clown_eye.png")
-        smile = Image.open("images/clown_smile.png")
+        original_img = Image.open(self.img_path) #convert to png
+        print(original_img.mode)
+
+        nose = Image.open("images/clown_nose.jpg")
+        print(nose.mode)
+        eye = Image.open("images/clown_eye.jpg")
+        smile = Image.open("images/clown_smile.jpg")
         for x, y, w, h in faces:
             coordinates = (x, y, x + w, y - h)
             original_img.paste(nose, coordinates)

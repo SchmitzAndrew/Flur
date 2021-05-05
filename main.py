@@ -56,7 +56,7 @@ print("2- Cat Blur")
 print("3- Video Detection")
 print("4- Clown Transformation")
 
-selection = int(input("Enter the method to call:"))
+selection = int(input("Enter the method to call: "))
 
 if selection == 1:
     facial_blur()
@@ -64,5 +64,7 @@ elif selection == 2:
     cat_detection()
 elif selection == 3:
     video_detection()
-elif selection ==4:
+elif selection == 4:
     clown_transformation()
+else:
+    print("Not a valid input :(")
